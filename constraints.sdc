@@ -1,17 +1,10 @@
-read_libs /home/install/FOUNDRY/digital/90nm/dig/lib/slow.lib
-read_hdl counter.v
-elaborate
-read_sdc constraints.sdc
-set_db syn_generic_effort medium 
-set_db syn_map_effort medium
-set_db syn_opt_effort medium
-syn_generic
-syn_map
-syn_opt
-report_timing > counter_timing.rep
-report_area > counter_area.rep
-report_power > counter_power.rep
-write_hdl > counter_netlist.v
-write_sdc > counter_output_constaints.sdc
-report_gates > counter_gates.v
-gui_show
+create_clock -name clk -period 2 -waveform {01} [get_ports "clk"]
+set_clock_transition -rise 0.1 [get_clocks "clk"]
+set_clock_transition -fall 0.1 [get_clocks "clk"]
+set_clock_uncertainty 0.01 [get_ports "clk"]
+set_input_transition 0.12 [all_inputs]
+set_input_delay -max 0.8 [get_ports "clk"] -clock [get_clocks "clk"]
+set_input_delay -max 0.8 [get_ports "reset"] -clock [get_clocks "clk"]
+set_output_delay -max 0.8 [get_ports "count"] -clock [get_clocks "clk"]
+set_load 0.15 [all_outputs]
+set_max_fanout 20.00 [current_design]
