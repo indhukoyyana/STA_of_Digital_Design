@@ -4,10 +4,10 @@ output reg[3:0]count;
 always@(posedge clk or negedge rst)
 begin
 if(!rst)
-count=0;
+count<=0;
 else if(m)
-count=count+1;
+count<=count+1;
 else
-count=count-1;
+count<=count-1;
 end
 endmodule
