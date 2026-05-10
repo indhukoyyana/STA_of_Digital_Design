@@ -1,0 +1,210 @@
+
+<h2 class="sr-only">Genus timing path analysis for 4-bit counter — all 12 paths</h2>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.wrap{padding:1rem 0}
+.section-title{font-size:13px;font-weight:500;color:var(--color-text-secondary);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px}
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px}
+.metric-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px}
+.metric-val{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.metric-val.pass{color:#1D9E75}
+.metric-val.warn{color:#BA7517}
+.tbl-wrap{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:1.5rem}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+thead tr{background:var(--color-background-secondary)}
+thead th{padding:9px 10px;text-align:left;font-weight:500;color:var(--color-text-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+tbody tr{border-bottom:0.5px solid var(--color-border-tertiary)}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--color-background-secondary)}
+td{padding:8px 10px;color:var(--color-text-primary);vertical-align:middle}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500}
+.badge-pass{background:#EAF3DE;color:#3B6D11}
+.badge-warn{background:#FAEEDA;color:#854F0B}
+.mono{font-family:var(--font-mono);font-size:12px}
+.path-type{font-size:11px;color:var(--color-text-secondary)}
+.critical{background:#FAEEDA}
+.note{font-size:12px;color:var(--color-text-secondary);margin-top:8px;padding:8px 12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border-left:3px solid #EF9F27}
+</style>
+
+<div class="wrap">
+
+<div class="section-title">Summary — Genus timing analysis · TT corner · 12 total paths</div>
+<div class="summary-grid">
+  <div class="metric">
+    <div class="metric-label">Total Paths</div>
+    <div class="metric-val">12</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Passing Paths</div>
+    <div class="metric-val pass">12</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Failing Paths</div>
+    <div class="metric-val">0</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">WNS (worst slack)</div>
+    <div class="metric-val warn">+0.223 ns</div>
+  </div>
+</div>
+
+<div class="section-title">All 12 timing paths</div>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+  <th>Path</th>
+  <th>Type</th>
+  <th>Start</th>
+  <th>End</th>
+  <th>Arrival (ns)</th>
+  <th>Req. time (ns)</th>
+  <th>Slack (ns)</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+
+<tr class="critical">
+  <td class="mono">1</td>
+  <td>Setup, reg→reg<br><span class="path-type">8 segments</span></td>
+  <td class="mono">count_reg[0]/Q<br><span class="path-type">DFFRX2</span></td>
+  <td class="mono">count_reg[3]/SE<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">1.476</td>
+  <td class="mono">1.700</td>
+  <td class="mono">+0.223</td>
+  <td><span class="badge badge-warn">Critical</span></td>
+</tr>
+
+<tr>
+  <td class="mono">2</td>
+  <td>Setup, reg→reg<br><span class="path-type">8 segments</span></td>
+  <td class="mono">count_reg[0]/Q<br><span class="path-type">DFFRX2</span></td>
+  <td class="mono">count_reg[2]/SE<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">1.420</td>
+  <td class="mono">1.730</td>
+  <td class="mono">+0.310</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">3</td>
+  <td>Output delay<br><span class="path-type">reg→out, 2 seg</span></td>
+  <td class="mono">count_reg[0]/Q<br><span class="path-type">DFFRX2</span></td>
+  <td class="mono">count[0]<br><span class="path-type">output port</span></td>
+  <td class="mono">0.845</td>
+  <td class="mono">1.200</td>
+  <td class="mono">+0.355</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">4</td>
+  <td>Output delay<br><span class="path-type">reg→out, 2 seg</span></td>
+  <td class="mono">count_reg[1]/Q<br><span class="path-type">DFFRHQX2</span></td>
+  <td class="mono">count[1]<br><span class="path-type">output port</span></td>
+  <td class="mono">0.818</td>
+  <td class="mono">1.200</td>
+  <td class="mono">+0.382</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">5</td>
+  <td>Output delay<br><span class="path-type">reg→out, 2 seg</span></td>
+  <td class="mono">count_reg[2]/Q<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">count[2]<br><span class="path-type">output port</span></td>
+  <td class="mono">0.813</td>
+  <td class="mono">1.200</td>
+  <td class="mono">+0.387</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">6</td>
+  <td>Output delay<br><span class="path-type">reg→out, 2 seg</span></td>
+  <td class="mono">count_reg[3]/Q<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">count[3]<br><span class="path-type">output port</span></td>
+  <td class="mono">0.813</td>
+  <td class="mono">1.200</td>
+  <td class="mono">+0.387</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">7</td>
+  <td>Setup, reg→reg<br><span class="path-type">8 segments</span></td>
+  <td class="mono">count_reg[0]/Q<br><span class="path-type">DFFRX2</span></td>
+  <td class="mono">count_reg[1]/D<br><span class="path-type">DFFRHQX2</span></td>
+  <td class="mono">1.340</td>
+  <td class="mono">1.920</td>
+  <td class="mono">+0.577</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">8</td>
+  <td>Setup, reg→reg<br><span class="path-type">2 segments</span></td>
+  <td class="mono">count_reg[2]/Q<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">count_reg[2]/SI<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">0.813</td>
+  <td class="mono">1.636</td>
+  <td class="mono">+0.824</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">9</td>
+  <td>Setup, reg→reg<br><span class="path-type">2 segments</span></td>
+  <td class="mono">count_reg[3]/Q<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">count_reg[3]/SI<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">0.813</td>
+  <td class="mono">1.636</td>
+  <td class="mono">+0.824</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">10</td>
+  <td>Setup, reg→reg<br><span class="path-type">4 segments</span></td>
+  <td class="mono">count_reg[2]/Q<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">count_reg[2]/D<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">0.880</td>
+  <td class="mono">1.741</td>
+  <td class="mono">+0.861</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">11</td>
+  <td>Setup, reg→reg<br><span class="path-type">4 segments</span></td>
+  <td class="mono">count_reg[3]/Q<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">count_reg[3]/D<br><span class="path-type">SDFFRHQX2</span></td>
+  <td class="mono">0.830</td>
+  <td class="mono">1.754</td>
+  <td class="mono">+0.924</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+<tr>
+  <td class="mono">12</td>
+  <td>Setup, reg→reg<br><span class="path-type">2 segments</span></td>
+  <td class="mono">count_reg[0]/QN<br><span class="path-type">DFFRX2</span></td>
+  <td class="mono">count_reg[0]/D<br><span class="path-type">DFFRX2</span></td>
+  <td class="mono">0.446</td>
+  <td class="mono">1.833</td>
+  <td class="mono">+1.386</td>
+  <td><span class="badge badge-pass">Pass</span></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="note">
+  ⚠ Path 1 is the critical path (WNS = +0.223 ns). It passes, but has the least timing margin. The 8-segment combinational chain through NAND2XL → NAND2BX1 → AND2X1 → MX2X1 to count_reg[3]/SE is the bottleneck. All other 11 paths have comfortable positive slack.
+</div>
+
+</div>
