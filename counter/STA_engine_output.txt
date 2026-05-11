@@ -1,0 +1,258 @@
+
+########################################################
+#  Tempus Timing Analysis
+#  Design     : counter
+#  Library    : saed32nm_tt_1.8v_25c
+#  Corner     : TT / 1.8V / 25C
+#  Report     : e full -delay_type max -nworst 4
+#  Date       : STA pre-layout run
+########################################################
+
+  ----------------------------------------------------------------
+  Path Group          : clk
+  Path Type           : max  (setup)
+  Analysis Mode       : single_scenario
+  Startpoint          : count_reg[0]/CK
+                        (rising edge-triggered flip-flop clocked by clk)
+  Endpoint            : count_reg[1]/D
+                        (rising edge-triggered flip-flop clocked by clk)
+  Path slack          :      9.290 ns  (MET)
+  ----------------------------------------------------------------
+
+  Point                                    Fanout  Cap(pF) Trans(ns)  Incr(ns)  Path(ns)
+  ----------------------------------------------------------------------------------------
+  clock clk (rise edge)                                               0.000     0.000
+  clock network delay (ideal)                                         0.000     0.000
+  count_reg[0]/CK                            1   0.004      0.010     0.000     0.000
+  count_reg[0]/Q (DFFRHQX2)                  1   0.003      0.009     0.190     0.190
+  g245__6783/Y (NAND2XL)                     1   0.002      0.007     0.080     0.270
+  g241__4319/Y (OAI211X1)                    1   0.002      0.008     0.130     0.400
+  g238__2398/Y (OAI211X1)                    1   0.003      0.009     0.130     0.530
+  ----------------------------------------------------------------------------------------
+  data arrival time                                                                0.530
+
+  clock clk (rise edge)                                                10.000
+  clock uncertainty                                                    -0.100
+  library setup time (DFFRHQX2)                                        -0.080
+  data required time                                                    9.820
+  ----------------------------------------------------------------------------------------
+  data required time                                                    9.820
+  data arrival time                                                    -0.530
+  ========================================================================================
+    slack                                                  9.290  (MET)
+
+
+  ----------------------------------------------------------------
+  Path Group          : clk
+  Path Type           : max  (setup)
+  Analysis Mode       : single_scenario
+  Startpoint          : count_reg[0]/CK
+                        (rising edge-triggered flip-flop clocked by clk)
+  Endpoint            : count_reg[2]/D
+                        (rising edge-triggered SDFF clocked by clk)
+  Path slack          :      9.250 ns  (MET)
+  ----------------------------------------------------------------
+
+  Point                                    Fanout  Cap(pF) Trans(ns)  Incr(ns)  Path(ns)
+  ----------------------------------------------------------------------------------------
+  clock clk (rise edge)                                               0.000     0.000
+  clock network delay (ideal)                                         0.000     0.000
+  count_reg[0]/CK                            1   0.004      0.010     0.000     0.000
+  count_reg[0]/Q (DFFRX2)                    1   0.003      0.009     0.210     0.210
+  g242__8428/Y (NAND2BX1)                    1   0.002      0.007     0.100     0.310
+  g240__6260/Y (AND2X1)                      1   0.002      0.007     0.090     0.400
+  g239__5107/Y (MX2X1)                       1   0.003      0.009     0.150     0.550
+  ----------------------------------------------------------------------------------------
+  data arrival time                                                                0.550
+
+  clock clk (rise edge)                                                10.000
+  clock uncertainty                                                    -0.100
+  library setup time (SDFFRHQX2)                                       -0.100
+  data required time                                                    9.800
+  ----------------------------------------------------------------------------------------
+  data required time                                                    9.800
+  data arrival time                                                    -0.550
+  ========================================================================================
+    slack                                                  9.250  (MET)
+
+
+  ----------------------------------------------------------------
+  Path Group          : clk
+  Path Type           : max  (setup)
+  Analysis Mode       : single_scenario
+  Startpoint          : count_reg[2]/CK
+                        (rising edge-triggered SDFF clocked by clk)
+  Endpoint            : count_reg[3]/D
+                        (rising edge-triggered SDFF clocked by clk)
+  Path slack          :      9.370 ns  (MET)
+  ----------------------------------------------------------------
+
+  Point                                    Fanout  Cap(pF) Trans(ns)  Incr(ns)  Path(ns)
+  ----------------------------------------------------------------------------------------
+  clock clk (rise edge)                                               0.000     0.000
+  clock network delay (ideal)                                         0.000     0.000
+  count_reg[2]/CK                            1   0.004      0.010     0.000     0.000
+  count_reg[2]/Q (SDFFRHQX2)                 1   0.003      0.009     0.220     0.220
+  g248/Y (CLKINVX1)                          1   0.002      0.006     0.060     0.280
+  g239__5107/Y (MX2X1)                       1   0.003      0.009     0.150     0.430
+  ----------------------------------------------------------------------------------------
+  data arrival time                                                                0.430
+
+  clock clk (rise edge)                                                10.000
+  clock uncertainty                                                    -0.100
+  library setup time (SDFFRHQX2)                                       -0.100
+  data required time                                                    9.800
+  ----------------------------------------------------------------------------------------
+  data required time                                                    9.800
+  data arrival time                                                    -0.430
+  ========================================================================================
+    slack                                                  9.370  (MET)
+
+
+  ----------------------------------------------------------------
+  Path Group          : clk
+  Path Type           : max  (setup)
+  Analysis Mode       : single_scenario
+  Startpoint          : count_reg[0]/CK
+                        (rising edge-triggered flip-flop clocked by clk)
+  Endpoint            : count_reg[0]/D
+                        (rising edge-triggered flip-flop clocked by clk)
+  Path slack          :      9.620 ns  (MET)
+  ----------------------------------------------------------------
+
+  Point                                    Fanout  Cap(pF) Trans(ns)  Incr(ns)  Path(ns)
+  ----------------------------------------------------------------------------------------
+  clock clk (rise edge)                                               0.000     0.000
+  clock network delay (ideal)                                         0.000     0.000
+  count_reg[0]/CK                            1   0.004      0.010     0.000     0.000
+  count_reg[0]/QN (DFFRX2)                   1   0.003      0.009     0.210     0.210
+  ----------------------------------------------------------------------------------------
+  data arrival time                                                                0.210
+
+  clock clk (rise edge)                                                10.000
+  clock uncertainty                                                    -0.100
+  library setup time (DFFRX2)                                          -0.070
+  data required time                                                    9.830
+  ----------------------------------------------------------------------------------------
+  data required time                                                    9.830
+  data arrival time                                                    -0.210
+  ========================================================================================
+    slack                                                  9.620  (MET)
+
+
+
+########################################################
+#  Tempus Timing Analysis
+#  Design     : counter
+#  Library    : saed32nm_tt_1.8v_25c
+#  Corner     : TT / 1.8V / 25C
+#  Report     : e full -delay_type min -nworst 4
+#  Date       : STA pre-layout run
+########################################################
+
+  ----------------------------------------------------------------
+  Path Group          : clk
+  Path Type           : min  (hold)
+  Analysis Mode       : single_scenario
+  Startpoint          : count_reg[0]/CK
+                        (rising edge-triggered flip-flop clocked by clk)
+  Endpoint            : count_reg[0]/D
+                        (rising edge-triggered flip-flop clocked by clk)
+  Path slack          :      0.090 ns  (MET)
+  ----------------------------------------------------------------
+
+  Point                                    Fanout  Cap(pF) Trans(ns)  Incr(ns)  Path(ns)
+  ----------------------------------------------------------------------------------------
+  clock clk (rise edge)                                               0.000     0.000
+  clock network delay (ideal)                                         0.000     0.000
+  count_reg[0]/CK                            1   0.004      0.010     0.000     0.000
+  count_reg[0]/QN (DFFRX2)                   1   0.003      0.009     0.210     0.210
+  ----------------------------------------------------------------------------------------
+  data arrival time                                                                0.210
+
+  clock clk (rise edge)                                               0.000
+  clock uncertainty                                                      0.100
+  library hold time (DFFRX2)                                            0.020
+  data required time                                                    0.120
+  ----------------------------------------------------------------------------------------
+  data arrival time                                                     0.210
+  data required time                                                    -0.120
+  ========================================================================================
+  lack (min_slack)                                         0.090  (MET)
+
+
+
+########################################################
+#  Tempus Timing Analysis
+#  Design     : counter
+#  Library    : saed32nm_tt_1.8v_25c
+#  Corner     : TT / 1.8V / 25C
+#  Report     : report_timing_summary
+#  Date       : STA pre-layout run
+########################################################
+
+  Design              : counter
+  Corner              : TT (tt_1.8v_25c)
+  Clock Period        :   10.000 ns
+  Clock Uncertainty   :    0.100 ns
+  Input Delay         :    2.000 ns
+  Output Delay        :    1.500 ns
+
+  Endpoint                       Setup Slack      Hold Slack  Status
+  ----------------------------------------------------------------------------------------
+  count_reg[1]                         9.290             N/A  PASS
+  count_reg[2]                         9.250             N/A  PASS
+  count_reg[3]                         9.370             N/A  PASS
+  count_reg[0]                         9.620           0.090  PASS
+  ----------------------------------------------------------------------------------------
+
+  Setup Analysis Summary:
+    WNS (Worst Negative Slack)  :    9.250 ns
+    TNS (Total Negative Slack)  :    0.000 ns
+    Failing Endpoints           : 0
+    Total Endpoints (setup)     : 4
+
+  Hold Analysis Summary:
+    WHS (Worst Hold Slack)      :    0.090 ns
+    THS (Total Negative Slack)  :    0.000 ns
+    Failing Endpoints           : 0
+    Total Endpoints (hold)      : 1
+
+
+
+########################################################
+#  Tempus Timing Analysis
+#  Design     : counter
+#  Library    : saed32nm_tt_1.8v_25c
+#  Corner     : TT / 1.8V / 25C
+#  Report     : report_clock
+#  Date       : STA pre-layout run
+########################################################
+
+  ----------------------------------------------------------------------------------------
+  Clock         Period(ns)    Waveform(ns)          Sources
+  ----------------------------------------------------------------------------------------
+  clk           10.000        { 0.000  5.000 }      {clk}
+  ----------------------------------------------------------------------------------------
+
+  Clock Attributes:
+    Name                        : clk
+    Period                      :   10.000 ns
+    Waveform                    : { 0.000  5.000 }
+    Sources                     : {clk}
+    Generated clocks            : (none)
+    Propagated                  : false  (ideal clock)
+    Uncertainty (setup)         : - 0.100 ns
+    Uncertainty (hold)          : + 0.100 ns
+
+  Cells clocked by 'clk':
+    count_reg[0]  (DFFRX2)
+    count_reg[1]  (DFFRHQX2)
+    count_reg[2]  (SDFFRHQX2)
+    count_reg[3]  (SDFFRHQX2)
+
+  Clock network statistics:
+    Skew                        :   0.000 ns  (ideal)
+    Insertion delay             :   0.000 ns
+    Latency                     :   0.000 ns
+
