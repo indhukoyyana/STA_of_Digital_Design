@@ -1,4 +1,4 @@
-read_libs /home/install/FOUNDRY/digital/90nm/dig/lib/slow.lib
+read_libs slow.lib
 read_hdl reg.v
 elaborate
 read_sdc reg.sdc
