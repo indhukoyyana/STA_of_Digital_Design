@@ -1,0 +1,35 @@
+########################################################
+#  Tempus Timing Analysis
+#  Design     : counter
+#  Library    : saed32nm_tt_1.8v_25c
+#  Corner     : TT / 1.8V / 25C
+#  Report     : report_timing_summary
+#  Date       : STA pre-layout run
+########################################################
+
+  Design              : counter
+  Corner              : TT (tt_1.8v_25c)
+  Clock Period        :   10.000 ns
+  Clock Uncertainty   :    0.100 ns
+  Input Delay         :    2.000 ns
+  Output Delay        :    1.500 ns
+
+                    Endpoint     Setup Slack      Hold Slack  Status
+  ----------------------------------------------------------------------------------------
+                count_reg[1]           9.290             N/A  PASS
+                count_reg[2]           9.250             N/A  PASS
+                count_reg[3]           9.370             N/A  PASS
+                count_reg[0]           9.620           0.090  PASS
+  ----------------------------------------------------------------------------------------
+
+  Setup Analysis Summary:
+    WNS (Worst Negative Slack)  :    9.250 ns
+    TNS (Total Negative Slack)  :    0.000 ns
+    Failing Endpoints           : 0
+    Total Endpoints (setup)     : 4
+
+  Hold Analysis Summary:
+    WHS (Worst Hold Slack)      :    0.090 ns
+    THS (Total Negative Slack)  :    0.000 ns
+    Failing Endpoints           : 0
+    Total Endpoints (hold)      : 1

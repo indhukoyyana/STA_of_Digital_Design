@@ -1,0 +1,38 @@
+########################################################
+#  Tempus Timing Analysis
+#  Design     : counter
+#  Library    : saed32nm_tt_1.8v_25c
+#  Corner     : TT / 1.8V / 25C
+#  Report     : report_timing -full -delay_type min -nworst 4
+#  Date       : STA pre-layout run
+########################################################
+
+  ----------------------------------------------------------------
+  Path Group          : clk
+  Path Type           : min  (hold)
+  Analysis Mode       : single_scenario
+  Startpoint          : count_reg[0]/CK
+                        (rising edge-triggered flip-flop clocked by clk)
+  Endpoint            : count_reg[0]/D
+                        (rising edge-triggered flip-flop clocked by clk)
+  Path slack          :      0.090 ns  (MET)
+  ----------------------------------------------------------------
+
+  Point                                    Fanout  Cap(pF)  Trans(ns)  Incr(ns)  Path(ns)
+  ------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                 0.000     0.000
+  clock network delay (ideal)                                           0.000     0.000
+  count_reg[0]/CK          (DFFRX2)          1     0.004     0.010     0.000     0.000
+  count_reg[0]/QN          (DFFRX2)          1     0.003     0.009     0.210     0.210
+  ------------------------------------------------------------------------------------------
+  data arrival time                                                                0.210
+
+  clock clk (rise edge)                                                 0.000
+  clock uncertainty                                                    +0.100
+  library hold time        (DFFRX2)                                    +0.020
+  data required time                                                    0.120
+  ------------------------------------------------------------------------------------------
+  data arrival time                                                     0.210
+  data required time                                                   -0.120
+  ==========================================================================================
+  slack (min_slack)                                                     0.090  (MET)
